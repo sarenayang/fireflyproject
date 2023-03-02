@@ -12,7 +12,7 @@ config()
 var spotify_client_id = process.env.SPOTIFY_CLIENT_ID
 var spotify_client_secret = process.env.SPOTIFY_CLIENT_SECRET
 
-var spotify_redirect_uri = 'http://localhost:5173/auth/callback'
+var spotify_redirect_uri = 'http://localhost:5000/auth/callback'
 
 var generateRandomString = function (length) {
   var text = '';
@@ -65,6 +65,7 @@ app.get('/auth/callback', (req, res) => {
       access_token = body.access_token;
       res.redirect('/')
     }
+    console.log("fuck");
   });
 
 })
